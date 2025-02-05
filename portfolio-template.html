@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajani Maski - Search AI Engineer & Senior Developer</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2b6cb0;
+            --accent-color: #4299e1;
+            --text-color: #2d3748;
+            --light-bg: #f7fafc;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 1rem auto;
+            background-color: var(--accent-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        section:nth-child(even) {
+            background-color: var(--light-bg);
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 1rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .experience-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+        }
+
+        .experience-item h3 {
+            color: var(--secondary-color);
+        }
+
+        .experience-duration {
+            color: var(--accent-color);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-item {
+            margin-bottom: 2rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-item a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            section {
+                padding: 2rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="profile-image">
+                <img src="https://media.licdn.com/dms/image/v2/C4D03AQF-57wF-hkV6w/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1608000817195?e=1744243200&v=beta&t=9xcONyRZLrhfePRqGiCb1h1ot8EZaHoi5MTQmAq2acQ" alt="Rajani Maski" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+               
+            </div>
+            <h1>Rajani Maski</h1>
+            <p>Senior Search AI Engineer & Developer</p>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <h2>Professional Summary</h2>
+            <p>Results-driven Senior Developer and Search AI Engineer with 16 years of experience in designing and developing large-scale search and machine learning applications. Proven track record in architecting high-performance, distributed search platforms using Apache Lucene, Solr, Elasticsearch, OpenSearch, Apache Spark, Redis, and RediSearch. Adept in ranking algorithms, ML-powered search applications, Learning to Rank (LTR), vector search, hybrid search, and RAG-based AI solutions.</p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2>Technical Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Search ML & AI</h3>
+                    <ul>
+                        <li>Apache Lucene</li> 
+                        <li>Apache Solr</li>
+                        <li>OpenSearch</li>
+                        <li>Elasticsearch</li>
+                        <li>RAG, LLMs, Embeddings, Vector Databases</li>
+                        <li>Learning to Rank (LTR)</li>
+                        <li>Hybrid Search</li>
+                        <li>Apache Spark</li>
+                        <li>RediSearch</li>
+                        <li>Graph Databases</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Programming</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>Scala</li>
+                        <li>Bash</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Cloud & Infrastructure</h3>
+                    <ul>
+                        <li>AWS Solutions Architect</li>
+                        <li>AWS Machine Learning Professional</li>
+                       <li>Google Cloud Platform</li>
+                       <li>Kubernetes</li>
+                       <li>Terraform</li>
+                       <li>Github CI/CD</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2>Professional Experience</h2>
+            <div class="experience-item">
+                <h3>Software Engineer IV</h3>
+                <p class="experience-duration">Shutterstock, New York | May 2022 - Present</p>
+                <ul>
+                    <li>Architected large-scale search infrastructure serving 2K+ RPS with terabytes of indexed data</li>
+                    <li>Developed ML-powered ranking models using Learning to Rank (LTR)</li>
+                    <li>Built data pipelines integrating search logs with machine learning workflows</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <h3>Professional Services Consulting Engineer</h3>
+                <p class="experience-duration">Redis, New York | Dec 2020 - May 2022</p>
+                <ul>
+                    <li>Built solutions using RediSearch, RedisGraph, and vector search</li>
+                    <li>Performance benchmark of Redis data structures</li>
+                    <li>Led Redis Developer and Admin workshops</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <h3>Senior Search Consultant</h3>
+                <p class="experience-duration">Lucidworks, New York | Jun 2018 - Dec 2020</p>
+                <ul>
+                    <li>Designed full stack search applications for digital workplace and commerce</li>
+                    <li>Implemented large scale search analytics using Apache Spark and Solr</li>
+                    <li>Developed ML-based Learning to Rank models</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="container">
+            <h2>Education</h2>
+            <div class="education-item">
+                <h3>Masters in Computer Science</h3>
+                <p>San Francisco State University, USA | 2016 - 2018</p>
+                <p>Research: Efficient & Effective Search for Large Textual Collections using ML techniques</p>
+            </div>
+            <div class="education-item">
+                <h3>Bachelors in Engineering, Instrumentation & Technology</h3>
+                <p>Visvesvaraya Technological University, India | 2005 - 2009</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:krajani.maski@gmail.com">krajani.maski@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+15163090398">(516) 309-0398</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <a href="https://www.linkedin.com/in/rajanimaski/" target="_blank">LinkedIn Profile</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>New York, United States</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Rajani Maski. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
