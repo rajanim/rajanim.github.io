@@ -3,276 +3,1040 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rajani Maski - Search AI Engineer & Senior Developer</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+    <title>Rajani Maski | Staff Software Engineer, AI</title>
+    <meta name="description" content="Rajani Maski | Staff Software Engineer, AI. Generative Discovery, agentic retrieval, and multimodal RAG at marketplace scale: 500M+ assets, 2,000+ RPS, 25 languages. 15+ years in search, ranking, and ML.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
     <style>
         :root {
-            --primary-color: #1a365d;
-            --secondary-color: #2b6cb0;
-            --accent-color: #4299e1;
-            --text-color: #2d3748;
-            --light-bg: #f7fafc;
+            --bg: #ffffff;
+            --bg-deep: #f6f5f2;
+            --ink: #1a1815;
+            --ink-soft: #4a463f;
+            --ink-mute: #8a8275;
+            --rule: #e5e3de;
+            --accent: #b14223;
+            --accent-soft: #c66a4a;
+            --serif: 'Inter', system-ui, -apple-system, sans-serif;
+            --sans: 'Inter', system-ui, -apple-system, sans-serif;
+            --mono: 'IBM Plex Mono', ui-monospace, monospace;
         }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
+            font-family: var(--sans);
+            font-size: 16px;
+            line-height: 1.55;
+            color: var(--ink);
+            background-color: var(--bg);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            position: relative;
+            overflow-x: hidden;
         }
 
-        header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 3rem 0;
-            text-align: center;
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s ease;
         }
 
-        .container {
-            max-width: 1200px;
+        a:hover {
+            color: var(--accent);
+        }
+
+        /* ─── Layout ─────────────────────────────────────────── */
+        .wrap {
+            max-width: 1180px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 clamp(1.5rem, 4vw, 3rem);
+            position: relative;
+            z-index: 2;
         }
 
-        .profile-image {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            margin: 1rem auto;
-            background-color: var(--accent-color);
+        /* ─── Top bar ────────────────────────────────────────── */
+        .topbar {
+            padding: 1.25rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--mono);
+            font-size: 0.78rem;
+            letter-spacing: 0.04em;
+            color: var(--ink-soft);
+        }
+
+        .topbar .mark {
+            font-family: var(--sans);
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: -0.005em;
+            color: var(--ink);
+        }
+
+        .topbar nav {
+            display: flex;
+            gap: 1.75rem;
+        }
+
+        .topbar nav a {
+            position: relative;
+        }
+
+        .topbar nav a::before {
+            content: attr(data-num) " ";
+            color: var(--accent);
+            margin-right: 0.35em;
+        }
+
+        @media (max-width: 720px) {
+            .topbar nav { display: none; }
+        }
+
+        /* ─── Hero ───────────────────────────────────────────── */
+        .hero {
+            padding: 3rem 0 3.5rem;
+            position: relative;
+        }
+
+        .hero-meta {
+            font-family: var(--mono);
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--ink-mute);
             display: flex;
             align-items: center;
-            justify-content: center;
-        }
-
-        section {
-            padding: 4rem 0;
-        }
-
-        section:nth-child(even) {
-            background-color: var(--light-bg);
-        }
-
-        h1, h2, h3 {
-            margin-bottom: 1rem;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .skill-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .experience-item {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            gap: 0.75rem;
             margin-bottom: 1.5rem;
         }
 
-        .experience-item h3 {
-            color: var(--secondary-color);
+        .hero-meta::before {
+            content: "";
+            width: 2.5rem;
+            height: 1px;
+            background: var(--accent);
         }
 
-        .experience-duration {
-            color: var(--accent-color);
+        .hero h1 {
+            font-family: var(--sans);
+            font-weight: 600;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            line-height: 1;
+            letter-spacing: -0.04em;
+            color: var(--ink);
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 .ital {
+            font-weight: 400;
+            color: var(--accent);
+        }
+
+        .hero .role {
+            font-family: var(--sans);
+            font-weight: 400;
+            font-size: clamp(1rem, 1.6vw, 1.2rem);
+            color: var(--ink-soft);
+            margin-bottom: 1.75rem;
+            letter-spacing: -0.005em;
+        }
+
+        .hero .role .sep {
+            display: inline-block;
+            color: var(--accent);
+            margin: 0 0.6em;
+            transform: translateY(-0.05em);
+        }
+
+        .hero-sub {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            gap: 2rem;
+            align-items: end;
+            border-top: 1px solid var(--rule);
+            padding-top: 1.5rem;
+        }
+
+        .hero-sub .lede {
+            max-width: 38rem;
+            font-size: 1rem;
+            line-height: 1.55;
+            color: var(--ink-soft);
+        }
+
+        .hero-sub .status {
+            font-family: var(--mono);
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--ink-mute);
+            text-align: right;
+            line-height: 1.8;
+        }
+
+        .status .dot {
+            display: inline-block;
+            width: 0.45rem;
+            height: 0.45rem;
+            background: #4a8a3a;
+            border-radius: 50%;
+            margin-right: 0.4rem;
+            vertical-align: middle;
+            box-shadow: 0 0 0 3px rgba(74,138,58,0.15);
+        }
+
+        @media (max-width: 720px) {
+            .hero { padding: 3rem 0 4rem; }
+            .hero-sub {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .hero-sub .status { text-align: left; }
+        }
+
+        /* ─── Section scaffolding ────────────────────────────── */
+        section.block {
+            padding: 2.5rem 0;
+            border-top: 1px solid var(--rule);
+        }
+
+        .section-head {
+            display: grid;
+            grid-template-columns: 9rem 1fr;
+            gap: 2rem;
+            margin-bottom: 1.75rem;
+            align-items: baseline;
+        }
+
+        .section-num {
+            font-family: var(--mono);
+            font-size: 0.78rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
+
+        .section-title {
+            font-family: var(--sans);
+            font-weight: 600;
+            font-size: clamp(1.65rem, 3vw, 2.25rem);
+            letter-spacing: -0.025em;
+            color: var(--ink);
+            line-height: 1.15;
+        }
+
+        .body-grid {
+            display: grid;
+            grid-template-columns: 9rem 1fr;
+            gap: 2rem;
+        }
+
+        .body-grid .label {
+            font-family: var(--mono);
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--ink-mute);
+            padding-top: 0.4rem;
+        }
+
+        @media (max-width: 720px) {
+            .section-head, .body-grid {
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
+            }
+            section.block { padding: 2rem 0; }
+        }
+
+        /* ─── About ──────────────────────────────────────────── */
+        .about-prose {
+            font-family: var(--sans);
+            font-weight: 400;
+            font-size: clamp(0.98rem, 1.25vw, 1.1rem);
+            line-height: 1.55;
+            letter-spacing: -0.005em;
+            color: var(--ink);
+            max-width: 44rem;
+        }
+
+        .about-prose em {
+            font-style: normal;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .about-prose p + p { margin-top: 0.75rem; }
+
+        /* ─── Now / Currently ────────────────────────────────── */
+        .now-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            background: var(--bg-deep);
+            padding: 1.75rem;
+            border-radius: 2px;
+            position: relative;
+        }
+
+        .now-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--accent);
+        }
+
+        .now-card .header {
+            font-family: var(--mono);
+            font-size: 0.72rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--ink-mute);
+            margin-bottom: 0.6rem;
+        }
+
+        .now-card h3 {
+            font-family: var(--sans);
+            font-weight: 600;
+            font-size: 1.2rem;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.25rem;
+        }
+
+        .now-card .where {
+            font-family: var(--mono);
+            font-size: 0.8rem;
+            color: var(--ink-soft);
+            margin-bottom: 1rem;
+        }
+
+        .now-card p {
+            color: var(--ink-soft);
+            line-height: 1.55;
+            font-size: 0.92rem;
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            align-content: start;
+        }
+
+        .metric {
+            border-top: 1px solid var(--rule);
+            padding-top: 0.75rem;
+        }
+
+        .metric .num {
+            font-family: var(--sans);
+            font-weight: 600;
+            font-size: clamp(1.6rem, 3vw, 2.1rem);
+            line-height: 1;
+            letter-spacing: -0.035em;
+            color: var(--ink);
+            margin-bottom: 0.3rem;
+        }
+
+        .metric .num .unit {
+            font-size: 0.5em;
+            color: var(--accent);
             font-weight: 500;
+            margin-left: 0.15em;
+            letter-spacing: 0;
+        }
+
+        .metric .caption {
+            font-family: var(--mono);
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--ink-mute);
+            line-height: 1.45;
+        }
+
+        @media (max-width: 720px) {
+            .now-card { grid-template-columns: 1fr; gap: 2rem; padding: 1.75rem; }
+        }
+
+        /* ─── Experience timeline ────────────────────────────── */
+        .role-entry {
+            display: grid;
+            grid-template-columns: 9rem 1fr;
+            gap: 2rem;
+            padding: 1.5rem 0;
+            border-top: 1px solid var(--rule);
+        }
+
+        .role-entry:first-of-type { border-top: none; padding-top: 0; }
+
+        .role-when {
+            font-family: var(--mono);
+            font-size: 0.78rem;
+            letter-spacing: 0.05em;
+            color: var(--ink-mute);
+            padding-top: 0.25rem;
+        }
+
+        .role-where {
+            font-family: var(--sans);
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: -0.015em;
+            color: var(--ink);
+            margin-bottom: 0.15rem;
+        }
+
+        .role-title {
+            font-family: var(--mono);
+            font-size: 0.82rem;
+            color: var(--accent);
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.02em;
+        }
+
+        .role-bullets {
+            list-style: none;
+            padding: 0;
+        }
+
+        .role-bullets li {
+            position: relative;
+            padding-left: 1.4rem;
+            color: var(--ink-soft);
+            margin-bottom: 0.45rem;
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+
+        .role-bullets li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--accent);
+            font-family: var(--mono);
+        }
+
+        .role-bullets li strong {
+            color: var(--ink);
+            font-weight: 600;
+        }
+
+        .prior-roles {
+            font-size: 0.95rem;
+            color: var(--ink-soft);
+            line-height: 1.7;
+        }
+
+        .prior-roles .pipe {
+            color: var(--accent);
+            margin: 0 0.55em;
+        }
+
+        @media (max-width: 720px) {
+            .role-entry { grid-template-columns: 1fr; gap: 0.75rem; }
+        }
+
+        /* ─── Speaking ───────────────────────────────────────── */
+        .talks {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .talk {
+            padding: 1.25rem 1.5rem;
+            background: var(--bg-deep);
+            border-left: 3px solid var(--accent);
+            position: relative;
+        }
+
+        .talk .when {
+            font-family: var(--mono);
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--ink-mute);
             margin-bottom: 0.5rem;
         }
 
-        .education-item {
-            margin-bottom: 2rem;
+        .talk .when .badge {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--bg);
+            padding: 0.15rem 0.5rem;
+            margin-left: 0.5rem;
+            border-radius: 2px;
+            font-size: 0.65rem;
+            font-weight: 500;
         }
 
-        .contact-grid {
+        .talk .when .badge.upcoming {
+            background: var(--ink);
+        }
+
+        .talk h4 {
+            font-family: var(--sans);
+            font-weight: 600;
+            font-size: 1.05rem;
+            line-height: 1.3;
+            letter-spacing: -0.015em;
+            color: var(--ink);
+            margin-bottom: 0.4rem;
+        }
+
+        .talk h4 em {
+            font-style: normal;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .talk .venue {
+            font-family: var(--mono);
+            font-size: 0.85rem;
+            color: var(--ink-soft);
+        }
+
+        @media (max-width: 720px) {
+            .talks { grid-template-columns: 1fr; }
+        }
+
+        /* ─── Skills ─────────────────────────────────────────── */
+        .skills {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem 2rem;
         }
 
-        .contact-item {
+        @media (max-width: 960px) {
+            .skills { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .skill-group .group-label {
+            font-family: var(--mono);
+            font-size: 0.72rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
             display: flex;
-            align-items: center;
+            align-items: baseline;
             gap: 0.5rem;
         }
 
-        .contact-item a {
-            color: var(--secondary-color);
-            text-decoration: none;
+        .skill-group .group-label::after {
+            content: "";
+            flex: 1;
+            border-top: 1px dashed var(--rule);
+            transform: translateY(-0.25rem);
         }
 
+        .skill-group .items {
+            font-family: var(--sans);
+            font-weight: 400;
+            font-size: 0.98rem;
+            line-height: 1.6;
+            color: var(--ink);
+            letter-spacing: -0.005em;
+        }
+
+        .skill-group .items .sep {
+            color: var(--ink-mute);
+            margin: 0 0.4em;
+        }
+
+        @media (max-width: 720px) {
+            .skills { grid-template-columns: 1fr; gap: 1.75rem; }
+        }
+
+        /* ─── Credentials ────────────────────────────────────── */
+        .credentials {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem 2rem;
+        }
+
+        .cred-block {
+            border-top: 2px solid var(--ink);
+            padding-top: 1rem;
+        }
+
+        .cred-block .kicker {
+            font-family: var(--mono);
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--ink-mute);
+            margin-bottom: 0.4rem;
+        }
+
+        .cred-block h4 {
+            font-family: var(--sans);
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: -0.015em;
+            color: var(--ink);
+            margin-bottom: 0.2rem;
+        }
+
+        .cred-block .where {
+            font-family: var(--mono);
+            font-size: 0.78rem;
+            color: var(--ink-soft);
+            margin-bottom: 0.4rem;
+        }
+
+        .cred-block p {
+            color: var(--ink-soft);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 720px) {
+            .credentials { grid-template-columns: 1fr; }
+        }
+
+        /* ─── Contact ────────────────────────────────────────── */
+        .contact-block {
+            padding: 3rem 0 3.5rem;
+            border-top: 1px solid var(--rule);
+        }
+
+        .contact-block .lede {
+            font-family: var(--sans);
+            font-weight: 500;
+            font-size: clamp(1.25rem, 2.5vw, 1.7rem);
+            line-height: 1.3;
+            letter-spacing: -0.025em;
+            max-width: 36rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .contact-block .lede em {
+            font-style: normal;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .contact-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem 3rem;
+            font-family: var(--mono);
+            font-size: 0.88rem;
+            max-width: 50rem;
+        }
+
+        .contact-list .row {
+            display: flex;
+            gap: 1rem;
+            border-top: 1px solid var(--rule);
+            padding-top: 0.6rem;
+            align-items: baseline;
+        }
+
+        .contact-list .key {
+            color: var(--ink-mute);
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+            min-width: 4rem;
+        }
+
+        .contact-list .val {
+            color: var(--ink);
+        }
+
+        .contact-list .val a {
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+
+        .contact-list .val a:hover {
+            border-bottom-color: var(--accent);
+        }
+
+        @media (max-width: 720px) {
+            .contact-list { grid-template-columns: 1fr; gap: 1rem; }
+        }
+
+        /* ─── Footer ─────────────────────────────────────────── */
         footer {
-            background-color: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 1rem 0;
-            margin-top: 4rem;
+            padding: 1.5rem 0;
+            border-top: 1px solid var(--rule);
+            font-family: var(--mono);
+            font-size: 0.7rem;
+            color: var(--ink-mute);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
 
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 1rem;
+        /* ─── Animations ─────────────────────────────────────── */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(1.5rem);
             }
-            
-            section {
-                padding: 2rem 0;
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
+        }
+
+        .reveal {
+            opacity: 0;
+            animation: fadeUp 1.1s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+        }
+
+        .d1 { animation-delay: 0.1s; }
+        .d2 { animation-delay: 0.25s; }
+        .d3 { animation-delay: 0.4s; }
+        .d4 { animation-delay: 0.55s; }
+        .d5 { animation-delay: 0.7s; }
+        .d6 { animation-delay: 0.85s; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal { opacity: 1; animation: none; }
+            html { scroll-behavior: auto; }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="profile-image">
-                <img src="https://media.licdn.com/dms/image/v2/C4D03AQF-57wF-hkV6w/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1608000817195?e=1744243200&v=beta&t=9xcONyRZLrhfePRqGiCb1h1ot8EZaHoi5MTQmAq2acQ" alt="Rajani Maski" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
-               
-            </div>
-            <h1>Rajani Maski</h1>
-            <p>Senior Search AI Engineer & Developer</p>
-        </div>
-    </header>
 
-    <section id="about">
-        <div class="container">
-            <h2>Professional Summary</h2>
-            <p>Results-driven Senior Developer and Search AI Engineer with 16 years of experience in designing and developing large-scale search and machine learning applications. Proven track record in architecting high-performance, distributed search platforms using Apache Lucene, Solr, Elasticsearch, OpenSearch, Apache Spark, Redis, and RediSearch. Adept in ranking algorithms, ML-powered search applications, Learning to Rank (LTR), vector search, hybrid search, and RAG-based AI solutions.</p>
-        </div>
-    </section>
+    <div class="wrap">
+        <header class="topbar reveal d1">
+            <div class="mark">Rajani Maski</div>
+            <nav>
+                <a href="#about" data-num="01">About</a>
+                <a href="#now" data-num="02">Now</a>
+                <a href="#work" data-num="03">Work</a>
+                <a href="#speaking" data-num="04">Speaking</a>
+                <a href="#contact" data-num="05">Contact</a>
+            </nav>
+        </header>
 
-    <section id="skills">
-        <div class="container">
-            <h2>Technical Expertise</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3>Search ML & AI</h3>
-                    <ul>
-                        <li>Apache Lucene</li> 
-                        <li>Apache Solr</li>
-                        <li>OpenSearch</li>
-                        <li>Elasticsearch</li>
-                        <li>RAG, LLMs, Embeddings, Vector Databases</li>
-                        <li>Learning to Rank (LTR)</li>
-                        <li>Hybrid Search</li>
-                        <li>Apache Spark</li>
-                        <li>RediSearch</li>
-                        <li>Graph Databases</li>
-                    </ul>
-                </div>
-                <div class="skill-card">
-                    <h3>Programming</h3>
-                    <ul>
-                        <li>Python</li>
-                        <li>Java</li>
-                        <li>Scala</li>
-                        <li>Bash</li>
-                    </ul>
-                </div>
-                <div class="skill-card">
-                    <h3>Cloud & Infrastructure</h3>
-                    <ul>
-                        <li>AWS Solutions Architect</li>
-                        <li>AWS Machine Learning Professional</li>
-                       <li>Google Cloud Platform</li>
-                       <li>Kubernetes</li>
-                       <li>Terraform</li>
-                       <li>Github CI/CD</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+        <!-- ─── HERO ────────────────────────────────────────── -->
+        <section class="hero">
+            <div class="hero-meta reveal d2">Staff Software Engineer · AI · New York City</div>
 
-    <section id="experience">
-        <div class="container">
-            <h2>Professional Experience</h2>
-            <div class="experience-item">
-                <h3>Software Engineer IV</h3>
-                <p class="experience-duration">Shutterstock, New York | May 2022 - Present</p>
-                <ul>
-                    <li>Architected large-scale search infrastructure serving 2K+ RPS with terabytes of indexed data</li>
-                    <li>Developed ML-powered ranking models using Learning to Rank (LTR)</li>
-                    <li>Built data pipelines integrating search logs with machine learning workflows</li>
-                </ul>
-            </div>
-            <div class="experience-item">
-                <h3>Professional Services Consulting Engineer</h3>
-                <p class="experience-duration">Redis, New York | Dec 2020 - May 2022</p>
-                <ul>
-                    <li>Built solutions using RediSearch, RedisGraph, and vector search</li>
-                    <li>Performance benchmark of Redis data structures</li>
-                    <li>Led Redis Developer and Admin workshops</li>
-                </ul>
-            </div>
-            <div class="experience-item">
-                <h3>Senior Search Consultant</h3>
-                <p class="experience-duration">Lucidworks, New York | Jun 2018 - Dec 2020</p>
-                <ul>
-                    <li>Designed full stack search applications for digital workplace and commerce</li>
-                    <li>Implemented large scale search analytics using Apache Spark and Solr</li>
-                    <li>Developed ML-based Learning to Rank models</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+            <h1 class="reveal d2">
+                Rajani<br>
+                <span class="ital">Maski</span>
+            </h1>
 
-    <section id="education">
-        <div class="container">
-            <h2>Education</h2>
-            <div class="education-item">
-                <h3>Masters in Computer Science</h3>
-                <p>San Francisco State University, USA | 2016 - 2018</p>
-                <p>Research: Efficient & Effective Search for Large Textual Collections using ML techniques</p>
-            </div>
-            <div class="education-item">
-                <h3>Bachelors in Engineering, Instrumentation & Technology</h3>
-                <p>Visvesvaraya Technological University, India | 2005 - 2009</p>
-            </div>
-        </div>
-    </section>
+            <p class="role reveal d3">
+                Generative Discovery <span class="sep">·</span> Agentic Retrieval <span class="sep">·</span> Search at Scale
+            </p>
 
-    <section id="contact">
-        <div class="container">
-            <h2>Contact</h2>
-            <div class="contact-grid">
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <a href="mailto:rajani.maski@gmail.com">rajani.maski@gmail.com</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <a href="tel:+15163000398">(516) 300-0398</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-linkedin"></i>
-                    <a href="https://www.linkedin.com/in/rajanimaski/" target="_blank">LinkedIn Profile</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <p>New York, United States</p>
+            <div class="hero-sub reveal d4">
+                <p class="lede">
+                    Architecting retrieval systems driven by intent, context, and cognition, bringing fifteen years of search, ranking, and ML infrastructure to the next generation of generative AI.
+                </p>
+                <div class="status">
+                    <span class="dot"></span>Open to staff &amp; principal AI roles<br>
+                    NYC · Hybrid or on-site
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Rajani Maski. All rights reserved.</p>
-        </div>
-    </footer>
+        <!-- ─── ABOUT ───────────────────────────────────────── -->
+        <section id="about" class="block">
+            <div class="section-head">
+                <div class="section-num">01 · About</div>
+                <h2 class="section-title">A throughline from search to agents.</h2>
+            </div>
+
+            <div class="body-grid">
+                <div class="label">Profile</div>
+                <div class="about-prose">
+                    <p>
+                        Staff AI engineer focused on <em>Generative Discovery</em>: the discipline of building retrieval that understands what users mean, not just what they type.
+                    </p>
+                    <p>
+                        Fifteen-plus years across information retrieval, search, ranking, recommendations, deep learning, and (most recently) agentic and multimodal systems. The same problems keep surfacing in new forms: relevance, context, evaluation, latency, scale. The tools change; the discipline does not.
+                    </p>
+                    <p>
+                        Currently shipping multimodal generative discovery at marketplace scale: <em>500M assets</em>, two million contributors, twenty-five languages. Speaker, mentor, and occasional contributor to the search projects underneath it all: <em>Lucene</em>, <em>Solr</em>, and <em>OpenSearch</em>.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── NOW ─────────────────────────────────────────── -->
+        <section id="now" class="block">
+            <div class="section-head">
+                <div class="section-num">02 · Now</div>
+                <h2 class="section-title">What I'm building.</h2>
+            </div>
+
+            <div class="body-grid">
+                <div class="label">Currently</div>
+                <div class="now-card">
+                    <div>
+                        <div class="header">In production</div>
+                        <h3>Multimodal Generative Discovery</h3>
+                        <div class="where">Shutterstock · May 2022 to present</div>
+                        <p>
+                            Architecting the retrieval layer behind RAG-style GenAI applications across one of the largest creative marketplaces in the world: 500M+ stock assets, two million contributors, twenty-five language surfaces, sustained production SLOs. Dense vector retrieval, hybrid search, and metadata grounding running across hundreds of nodes. Multimodal embedding pipelines for image + text semantic search, with offline and online evaluation frameworks driving relevance quality. Led the migration of all 500M assets from Solr to OpenSearch, enabling cloud-native scale and ML-powered ranking, including Learning-to-Rank. Mentor and tech-lead to L2 / L3 engineers on the team for three years running.
+                        </p>
+                    </div>
+                    <div class="metrics">
+                        <div class="metric">
+                            <div class="num">500<span class="unit">M+</span></div>
+                            <div class="caption">Stock assets indexed &amp; served</div>
+                        </div>
+                        <div class="metric">
+                            <div class="num">$1<span class="unit">M/yr</span></div>
+                            <div class="caption">Infrastructure cost reduction</div>
+                        </div>
+                        <div class="metric">
+                            <div class="num">2,000<span class="unit">RPS</span></div>
+                            <div class="caption">Sustained production throughput</div>
+                        </div>
+                        <div class="metric">
+                            <div class="num">25<span class="unit">×</span></div>
+                            <div class="caption">Languages supported in retrieval</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── WORK ────────────────────────────────────────── -->
+        <section id="work" class="block">
+            <div class="section-head">
+                <div class="section-num">03 · Work</div>
+                <h2 class="section-title">Selected experience.</h2>
+            </div>
+
+            <div class="body-grid">
+                <div class="label">Timeline</div>
+                <div>
+                    <div class="role-entry">
+                        <div class="role-when">2022 · Present</div>
+                        <div>
+                            <div class="role-where">Shutterstock</div>
+                            <div class="role-title">Staff Software Engineer, AI · Multimodal Generative Discovery</div>
+                            <ul class="role-bullets">
+                                <li>Architected <strong>Generative Discovery infrastructure</strong> powering RAG-style GenAI applications across <strong>500M+ stock assets</strong> from 2M+ contributors, combining dense vector retrieval, hybrid search, and metadata grounding at <strong>2,000+ RPS</strong> across hundreds of nodes, with retrieval surfaces in <strong>25 languages</strong>.</li>
+                                <li>Drove infrastructure cost reduction of <strong>~$1M annual</strong> alongside <strong>25% latency improvement</strong>, while simultaneously improving relevance metrics, decoupling scale from quality tradeoffs.</li>
+                                <li>Designed and shipped a <strong>production agentic query understanding system</strong>: LLM-driven intent extraction, query rewriting and expansion, and multi-step retrieval planning integrated into the discovery stack at marketplace scale.</li>
+                                <li>Built multimodal embedding pipelines supporting image + text semantic search, with MLflow and SageMaker for feature generation and model lifecycle management.</li>
+                                <li>Designed offline and online evaluation frameworks for retrieval quality using precision/recall, relevance judgments, and human-in-the-loop feedback loops, supporting strict production SLOs.</li>
+                                <li>Led the <strong>Solr → OpenSearch migration of all 500M assets</strong>, redesigning the retrieval layer for cloud-native scale and unlocking ML-powered ranking pipelines including Learning-to-Rank.</li>
+                                <li>Performance work spanning <strong>FAISS, vLLM, vector index tuning, and JVM / Lucene profiling</strong>, closing the loop between retrieval architecture and the underlying systems.</li>
+                                <li><strong>Mentor and tech-lead to L2 / L3 engineers</strong> on the team for three consecutive years, reviewing designs, driving technical direction on retrieval and ranking workstreams, and growing the bench.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="role-entry">
+                        <div class="role-when">2020 to 2022</div>
+                        <div>
+                            <div class="role-where">Redis</div>
+                            <div class="role-title">Professional Services Consulting Engineer</div>
+                            <ul class="role-bullets">
+                                <li>Designed and deployed <strong>vector similarity search systems</strong> using Redis; advised enterprise customers on semantic search and retrieval architectures for ML workloads.</li>
+                                <li>Tuned latency-sensitive distributed systems for production environments with strict SLA requirements at scale.</li>
+                                <li>Led developer and admin workshops on Redis data structures, RediSearch, and graph workloads.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="role-entry">
+                        <div class="role-when">2018 to 2020</div>
+                        <div>
+                            <div class="role-where">Lucidworks</div>
+                            <div class="role-title">Senior Search Consultant</div>
+                            <ul class="role-bullets">
+                                <li>Architected enterprise search platforms using Lucidworks Fusion, Solr, and Spark; implemented <strong>Learning-to-Rank</strong> and ML-based relevance pipelines.</li>
+                                <li>Designed full-stack search applications for digital workplace and commerce verticals.</li>
+                                <li>Implemented large-scale search analytics using Apache Spark and Solr.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="role-entry">
+                        <div class="role-when">2009 to 2017</div>
+                        <div>
+                            <div class="role-where">Earlier roles</div>
+                            <div class="role-title">Foundations in search, retrieval, &amp; large-scale Java systems</div>
+                            <p class="prior-roles">
+                                Search Consultant <span class="pipe">/</span> Lucidworks India
+                                · Senior Software Engineer <span class="pipe">/</span> Target.com India
+                                · Sr. Java Programmer <span class="pipe">/</span> Happiest Minds
+                                · Search Consultant <span class="pipe">/</span> Sony India
+                                · Software Engineer <span class="pipe">/</span> PointCross Life Sciences
+                                · Search Intern <span class="pipe">/</span> Glassdoor USA
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── SPEAKING ────────────────────────────────────── -->
+        <section id="speaking" class="block">
+            <div class="section-head">
+                <div class="section-num">04 · Speaking</div>
+                <h2 class="section-title">On stage.</h2>
+            </div>
+
+            <div class="body-grid">
+                <div class="label">Talks</div>
+                <div class="talks">
+                    <article class="talk">
+                        <div class="when">2026 <span class="badge">Speaker</span></div>
+                        <h4><em>Agentic Search Patterns</em></h4>
+                        <div class="venue">Optimized AI Conference</div>
+                    </article>
+                    <article class="talk">
+                        <div class="when">2026 <span class="badge upcoming">Upcoming</span></div>
+                        <h4><em>Generative Discovery:</em> Intent, Context &amp; Cognition</h4>
+                        <div class="venue">OpenSearchCon India</div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── SKILLS ──────────────────────────────────────── -->
+        <section id="skills" class="block">
+            <div class="section-head">
+                <div class="section-num">05 · Stack</div>
+                <h2 class="section-title">Tools of the trade.</h2>
+            </div>
+
+            <div class="body-grid">
+                <div class="label">Capabilities</div>
+                <div class="skills">
+                    <div class="skill-group">
+                        <div class="group-label">AI &amp; Retrieval</div>
+                        <div class="items">RAG <span class="sep">·</span> Vector Search <span class="sep">·</span> Hybrid Retrieval <span class="sep">·</span> Multimodal AI <span class="sep">·</span> Agentic Systems <span class="sep">·</span> Embeddings <span class="sep">·</span> LLMOps <span class="sep">·</span> Prompt Engineering</div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="group-label">Search Platforms</div>
+                        <div class="items">OpenSearch <span class="sep">·</span> Elasticsearch <span class="sep">·</span> Apache Solr <span class="sep">·</span> Apache Lucene <span class="sep">·</span> Learning-to-Rank <span class="sep">·</span> RediSearch</div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="group-label">Performance &amp; Systems</div>
+                        <div class="items">FAISS <span class="sep">·</span> vLLM <span class="sep">·</span> Vector Index Tuning <span class="sep">·</span> JVM &amp; Lucene Profiling <span class="sep">·</span> Distributed Systems Perf <span class="sep">·</span> Latency-Sensitive Production SLOs</div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="group-label">Languages</div>
+                        <div class="items">Java <span class="sep">·</span> Python <span class="sep">·</span> Scala <span class="sep">·</span> C++ <span class="sep">·</span> Bash</div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="group-label">Cloud &amp; Infra</div>
+                        <div class="items">AWS Bedrock <span class="sep">·</span> AWS SageMaker <span class="sep">·</span> Kubernetes <span class="sep">·</span> Terraform <span class="sep">·</span> MLflow <span class="sep">·</span> Apache Spark <span class="sep">·</span> CI/CD</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── CREDENTIALS ─────────────────────────────────── -->
+        <section id="credentials" class="block">
+            <div class="section-head">
+                <div class="section-num">06 · Credentials</div>
+                <h2 class="section-title">Education &amp; certifications.</h2>
+            </div>
+
+            <div class="body-grid">
+                <div class="label">Background</div>
+                <div class="credentials">
+                    <div class="cred-block">
+                        <div class="kicker">Education</div>
+                        <h4>M.S. Computer Science</h4>
+                        <div class="where">San Francisco State University · 2016 to 2018</div>
+                        <p>Research: Efficient and effective search for large textual collections using machine learning techniques.</p>
+                    </div>
+
+                    <div class="cred-block">
+                        <div class="kicker">Education</div>
+                        <h4>B.E. Engineering</h4>
+                        <div class="where">Visvesvaraya Technological University · 2005 to 2009</div>
+                        <p>Instrumentation &amp; Technology.</p>
+                    </div>
+
+                    <div class="cred-block">
+                        <div class="kicker">Certification</div>
+                        <h4>AWS Certified GenAI Developer Professional</h4>
+                        <div class="where">Amazon Web Services</div>
+                        <p>Production-grade generative AI applications on AWS.</p>
+                    </div>
+
+                    <div class="cred-block">
+                        <div class="kicker">Continuous Learning</div>
+                        <h4>DeepLearning.AI · 40+ courses</h4>
+                        <div class="where">Andrew Ng &amp; collaborators</div>
+                        <p>RAG, agents, LLMOps, transformers, evaluation, fine-tuning.</p>
+                    </div>
+
+                    <div class="cred-block">
+                        <div class="kicker">Open Source</div>
+                        <h4>Apache Lucene · Solr · OpenSearch</h4>
+                        <div class="where">Issue reports &amp; pull requests</div>
+                        <p>Occasional contributor to the foundational projects of the search and retrieval ecosystem.</p>
+                    </div>
+
+                    <div class="cred-block">
+                        <div class="kicker">Recognition</div>
+                        <h4>Hackathons &amp; internal demos</h4>
+                        <div class="where">Multiple events</div>
+                        <p>Built and presented prototypes for agentic search and generative discovery patterns.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── CONTACT ─────────────────────────────────────── -->
+        <section id="contact" class="contact-block">
+            <p class="lede">
+                Open to <em>staff</em> and <em>principal</em> AI engineering roles in New York. Let's talk about retrieval, agents, or whatever you're building.
+            </p>
+
+            <div class="contact-list">
+                <div class="row">
+                    <div class="key">Email</div>
+                    <div class="val"><a href="mailto:rajani.maski@gmail.com">rajani.maski@gmail.com</a></div>
+                </div>
+                <div class="row">
+                    <div class="key">Phone</div>
+                    <div class="val"><a href="tel:+15163090398">+1 (516) 309-0398</a></div>
+                </div>
+                <div class="row">
+                    <div class="key">LinkedIn</div>
+                    <div class="val"><a href="https://www.linkedin.com/in/rajanimaski/" target="_blank" rel="noopener">linkedin.com/in/rajanimaski</a></div>
+                </div>
+                <div class="row">
+                    <div class="key">Based</div>
+                    <div class="val">New York, NY</div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div>© 2026 Rajani Maski</div>
+            <div>Last updated · April 2026</div>
+        </footer>
+    </div>
+
 </body>
 </html>
