@@ -215,6 +215,14 @@
             align-items: baseline;
         }
 
+        .section-head--full {
+            display: block;
+        }
+
+        .section-head--full .section-num {
+            margin-bottom: 0.5rem;
+        }
+
         .section-num {
             font-family: var(--mono);
             font-size: 0.78rem;
@@ -236,6 +244,10 @@
             display: grid;
             grid-template-columns: 9rem 1fr;
             gap: 2rem;
+        }
+
+        .body-grid--full {
+            display: block;
         }
 
         .body-grid .label {
@@ -501,6 +513,15 @@
             font-weight: 600;
         }
 
+        .talk h4 a {
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+
+        .talk h4 a:hover {
+            border-bottom-color: var(--accent);
+        }
+
         .talk .venue {
             font-family: var(--mono);
             font-size: 0.85rem;
@@ -589,11 +610,33 @@
             margin-bottom: 0.2rem;
         }
 
+        .cred-block h4 a {
+            color: var(--ink);
+            border-bottom: 1px solid var(--ink-mute);
+            transition: color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .cred-block h4 a:hover {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+
         .cred-block .where {
             font-family: var(--mono);
             font-size: 0.78rem;
             color: var(--ink-soft);
             margin-bottom: 0.4rem;
+        }
+
+        .cred-block .where a {
+            color: var(--ink);
+            border-bottom: 1px solid var(--rule);
+            transition: border-color 0.2s ease, color 0.2s ease;
+        }
+
+        .cred-block .where a:hover {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
         }
 
         .cred-block p {
@@ -818,16 +861,14 @@
 
         <!-- ─── WORK ────────────────────────────────────────── -->
         <section id="work" class="block">
-            <div class="section-head">
+            <div class="section-head section-head--full">
                 <div class="section-num">03 · Work</div>
                 <h2 class="section-title">Selected experience.</h2>
             </div>
 
-            <div class="body-grid">
-                <div class="label">Timeline</div>
-                <div>
-                    <div class="role-entry">
-                        <div class="role-when">2022 · Present</div>
+            <div class="body-grid body-grid--full">
+                <div class="role-entry">
+                        <div class="role-when">2022 to Present</div>
                         <div>
                             <div class="role-where">Shutterstock</div>
                             <div class="role-title">Staff Software Engineer, AI · Multimodal Generative Discovery</div>
@@ -884,7 +925,6 @@
                                 · Search Intern <span class="pipe">/</span> Glassdoor USA
                             </p>
                         </div>
-                    </div>
                 </div>
             </div>
         </section>
@@ -901,7 +941,9 @@
                 <div class="talks">
                     <article class="talk">
                         <div class="when">2026 <span class="badge">Speaker</span></div>
-                        <h4><em>Agentic Search Patterns</em></h4>
+                        <h4>
+                            <a href="https://rajanim.github.io/optimize-ai-2026/" target="_blank" rel="noopener"><em>Agentic Search Patterns</em></a>
+                        </h4>
                         <div class="venue">Optimized AI Conference</div>
                     </article>
                     <article class="talk">
@@ -977,8 +1019,10 @@
 
                     <div class="cred-block">
                         <div class="kicker">Certification</div>
-                        <h4>AWS Certified GenAI Developer Professional</h4>
-                        <div class="where">Amazon Web Services</div>
+                        <h4>
+                            <a href="https://www.credly.com/badges/905167e9-007c-436a-b2b2-20e65be907a7" target="_blank" rel="noopener">AWS Certified GenAI Developer Professional</a>
+                        </h4>
+                        <div class="where">Amazon Web Services · verified on Credly</div>
                         <p>Production-grade generative AI applications on AWS.</p>
                     </div>
 
@@ -999,8 +1043,11 @@
                     <div class="cred-block">
                         <div class="kicker">Recognition</div>
                         <h4>Hackathons &amp; internal demos</h4>
-                        <div class="where">Multiple events</div>
-                        <p>Built and presented prototypes for agentic search and generative discovery patterns.</p>
+                        <div class="where">
+                            <a href="https://luma.com/spark-hack-nyc" target="_blank" rel="noopener">Spark Hack NYC</a>
+                            · <a href="https://www.youtube.com/@rajanimaski6873/videos" target="_blank" rel="noopener">YouTube channel</a>
+                        </div>
+                        <p>Recent participant in Spark Hack NYC; ongoing video series on agentic search and generative discovery prototypes.</p>
                     </div>
                 </div>
             </div>
